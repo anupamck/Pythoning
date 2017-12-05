@@ -94,7 +94,7 @@ while playAgain:                                                                
             d+=1
 
     player = random.choice(['human','computer'])                                                    #Select who goes first randomly
-
+   
     if player == 'computer':
         print("The computer will play first")
     else:
@@ -173,7 +173,9 @@ while playAgain:                                                                
                         if turnCount in [0,1]:                                
                             if theBoard['mm'] == ' ':
                                 theBoard['mm'] = 'O'
-
+                                turnCount+=1
+                                #print(turnCount)
+                                
                             else:                                    
                                 if theBoard['mm'] == 'O':                                           #Logic to avoid losses                                            
                                     if theBoard['mr'] == 'X':
@@ -184,7 +186,7 @@ while playAgain:                                                                
                                                 theBoard[compMove] = 'O'
                                                 k+=1
                                                 turnCount+=1
-                                                print(turnCount)
+                                                #print(turnCount)
 
                                     elif theBoard['bm'] == 'X':                                     #Logic to avoid losses
                                         k = 0
@@ -194,7 +196,7 @@ while playAgain:                                                                
                                                 theBoard[compMove] = 'O'
                                                 k+=1
                                                 turnCount+=1
-                                                print(turnCount)
+                                                #print(turnCount)
 
                                     elif theBoard['ml'] == 'X':                                     #Logic to avoid losses
                                         k = 0
@@ -204,7 +206,7 @@ while playAgain:                                                                
                                                 theBoard[compMove] = 'O'
                                                 k+=1
                                                 turnCount+=1
-                                                print(turnCount)
+                                                #print(turnCount)
 
                                     elif theBoard['tm'] == 'X':                                     #Logic to avoid losses
                                         k = 0
@@ -214,9 +216,9 @@ while playAgain:                                                                
                                                 theBoard[compMove] = 'O'
                                                 k+=1
                                                 turnCount+=1
-                                                print(turnCount)
+                                                #print(turnCount)
                                     
-                                    else:
+                                    else: 
                                         k = 0                                                       #Logic to avoid losses
                                         while k == 0:
                                             compMove = random.choice([random.choice(['t','b']) + 'm', 'm' + random.choice(['l','r'])])
@@ -224,7 +226,9 @@ while playAgain:                                                                
                                                 theBoard[compMove] = 'O'
                                                 k+=1
                                                 turnCount+=1
-                                                print(turnCount)
+                                                #print(turnCount)
+
+
                                 else:
                                     k = 0
                                     while k == 0:                                                   #Show preference for corner slots if no loss threatened
@@ -233,7 +237,7 @@ while playAgain:                                                                
                                             theBoard[compMove] = 'O'
                                             k+=1
                                             turnCount+=1
-                                            print(turnCount)
+                                            #print(turnCount)
                                             
                         else:
                                 k = 0
@@ -243,7 +247,7 @@ while playAgain:                                                                
                                         theBoard[compMove] = 'O'
                                         k+=1
                                         turnCount+=1
-                                        print(turnCount)
+                                        #print(turnCount)
                                         
                 elif nLLogic[0] == 'x':                                                             #Defend imminent threat based on feedback from nearLoss()
                     k = 0
